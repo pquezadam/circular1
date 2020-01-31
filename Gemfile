@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'devise'
 gem 'geocoder'
+gem 'gmaps4rails'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
