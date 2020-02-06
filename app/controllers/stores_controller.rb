@@ -10,12 +10,14 @@ class StoresController < ApplicationController
       1000,
       units: :km
     )
-  else
+  elsif current_user.present?
     @stores = Store.near(
       current_user.address,
       10_000,
       units: :km
     )
+  else
+    @stores = Store.first(5)
   end
 
     @hash = Gmaps4rails.build_markers(@stores) do |store, marker|

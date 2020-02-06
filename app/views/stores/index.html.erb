@@ -26,8 +26,7 @@
 
 
     <script>
-        handler = Gmaps.build('Google');
-        byebug
+        const handler = Gmaps.build('Google');
         handler.buildMap({ 
           provider: {
             center: new google.maps.LatLng({lat: -34, lng: -33}),
@@ -37,11 +36,11 @@
             id: 'map'
           }
         
-        }, 
+        },  
             function(){
-            markers = handler.addMarkers(<%=raw @hash.to_json %>);
-            google.maps.event.addListener(handler.getMap(), "click", function(){
-              console.log("hey");
+              markers = handler.addMarkers(<%=raw @hash.to_json %>);
+              google.maps.event.addListener(handler.getMap(), "click", function(){
+                console.log("hey");
             });
 
             function(){
@@ -57,7 +56,6 @@
                 });
 
             });
-
-          }
+            }
       );
     </script>
