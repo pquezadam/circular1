@@ -11,16 +11,8 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @stores.each do |store| %>
-      <tr>
-        <td><%= store.name %></td>
-        <td><%= store.address %></td>
-        <td><%= link_to 'Show', store %></td>
-        <td><%= link_to 'Edit', edit_store_path(store) %></td>
-        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="stores-circular">
+    <%= render @stores %>
   </tbody>
 </table>
 
@@ -49,9 +41,23 @@
             function(){
             markers = handler.addMarkers(<%=raw @hash.to_json %>);
             google.maps.event.addListener(handler.getMap(), "click", function(){
-              console.log("hola");
+              console.log("hey");
             });
 
-            }
+            function(){
+              google.maps.event.addListener(handler.getMap(), 'center_changed', function(){
+                var latitude = handler.getMap().getCenter().lat();
+                var longitude = handler.getMap().getCenter().lng();
+                $.ajax({
+                  type: "GET",
+                  dataType: "script",
+                  url: '/stores',
+                  data: {latitude: latitude, longitude: longitude},
+                
+                });
+
+            });
+
+          }
       );
     </script>
