@@ -11,6 +11,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'faker'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
