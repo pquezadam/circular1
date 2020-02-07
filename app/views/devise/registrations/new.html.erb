@@ -1,5 +1,6 @@
+<div class="container">
 <div class="row justify-content-center">
-<div class="col-4">
+<div class="col-md-5">
 
   
   <%= form_for(resource, 
@@ -9,7 +10,7 @@
         ) do |f| %>
     <%= devise_error_messages! %>
 
-    <h2>Sign up</h2>
+    <h2>Registrate</h2>
 
     <div class="form-group">
       <%= f.label :email %><br />
@@ -26,7 +27,7 @@
     </div>
     <div class="col-md-2">
     <%= link_to "#", class:"btn btn-primary", id: "get_location" do %>
-      <i class="fa fa-map-marker"> </i>
+      <i class="fas fa-map-marker-alt"></i>
     <% end %>
       </div>
       </div>
@@ -54,35 +55,37 @@
 </div>
 </div>
 
-<script>
-$("#find-address").click(function(event)){
-  $(this).html('<i class="fa fa-spinner fa-spin"> </i>')
-    event.preventDefault();
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(getAddress);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    });
+  <script>
+  $("#find-address").click(function(event){
+    $(this).html(<i class="fas fa-map-marker-alt"></i>)
+      event.preventDefault();
 
-    function getAddress(position) {
-      var latitude = position.coords.latitude;
-      var longitude = position.coords.longitude;
-      $.ajax({
-        type: 'GET',
-        url: '/geo/findaddress',
-        data: {latitude: latitude, longitude: longitude},
-        dataType: 'script',
-      })
-      .done(function() {
-        console.log("success");
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        $("#find-address").html('<i class="fa fa-spinner fa-spin"> </i>');
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(getAddress);
+          } else {
+              x.innerHTML = "Geolocation is not supported by this browser.";
+          }
       });
-    }
-</script> 
+
+      function getAddress(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        $.ajax({
+          type: 'GET',
+          url: '/geo/findaddress',
+          data: {latitude: latitude, longitude: longitude},
+          dataType: 'script',
+        })
+        .done(function() {
+          console.log("success");
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          $("#find-address").html(<i class="fas fa-map-marker-alt"></i>);
+        });
+      }
+  </script> 
+</div>

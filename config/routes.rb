@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'geo/findaddress'
-root 'home#index'
+root 'stores#index'
   get 'home/index'
     devise_for :users, controllers: {
       sessions: 'users/sessions',
