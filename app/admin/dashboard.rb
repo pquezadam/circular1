@@ -31,6 +31,10 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end
+
+    panel "Grafico" do
+      render 'shared/chart'
+    end
   end
 end
     

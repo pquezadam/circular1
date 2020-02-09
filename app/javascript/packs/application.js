@@ -11,6 +11,8 @@ require("jquery")
 require("bootstrap")
 require("underscore")
 require("gmaps_google.js")
+require("chartkick")
+require("chart.js")
 
 
 
