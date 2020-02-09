@@ -6,21 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-addresses = "Emporio La Granel Av. Salvador 757, Providencia
-Un Cuarto a Granel Moneda 3156, Santiago
-Espacio Granel, Las Condes
-Kulko, Las Condes
-Sin Envase  Irarrázaval 3620, Ñuñoa
-Circularshop, Chicureo
-Cococacao, Manuel Rodríguez 3150, Maipú
-MiaSoul Market Nueva Providencia 2060 Local 8 Providencia
-Mundo Natural Paseo Los Trapenses, Lo Barnechea
-La Balanza Antupiren 9301, Local21, Peñalolén
-Alma Zero Av. Apoquindo 7942, Torre 1, Loc. 8, Las Condes"
+names = "Emporio La Granel
+Un Cuarto a Granel
+Espacio Granel
+Kulko
+Sin Envase
+Circularshop 
+Cococacao
+MiaSoul Market
+Mundo Natural
+La Balanza
+Alma Zero"
 
-Store.destroy_all
-addresses = addresses.split("\n")
-addresses.each do |addresses|
-    Store.create!(name: Faker::Name.name, address: addresses)
-    sleep 1
-end
+addresses = "Av. Salvador 757, Providencia
+ Moneda 3156, Santiago
+ Las Condes
+ Las Condes
+ Irarrázaval 3620, Ñuñoa
+ Chicureo
+ Manuel Rodríguez 3150, Maipú
+ Nueva Providencia 2060 Local 8 Providencia
+ Paseo Los Trapenses, Lo Barnechea
+ Antupiren 9301, Local21, Peñalolén
+ Av. Apoquindo 7942, Torre 1, Loc. 8, Las Condes"
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
