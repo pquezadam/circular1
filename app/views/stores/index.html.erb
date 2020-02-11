@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Nombre</th>
+      
       <th>Dirección</th>
       <th colspan="3"></th>
     </tr>
@@ -26,12 +27,13 @@
 
 
     <script>
+    $(document).ready(function(){
         handler = Gmaps.build('Google');
-        handler.buildMap({ provider: { center: new google.maps.LatLng({lat: -34, lng: -33}), zoom: 10 }, 
-          internal: { id: 'map' }},function(){
+        handler.buildMap({ provider: {}, internal: { id: 'map' }} ,function(){
               markers = handler.addMarkers(<%=raw @hash.to_json %>);
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
-              handler.getMap();      
+              handler.getMap().setCenter({ lat: -33.4372, lng: -70.6506 });      
             });      
+          })
     </script>
