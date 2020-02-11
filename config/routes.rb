@@ -8,7 +8,8 @@ root 'stores#index'
   get 'home/index'
     devise_for :users, controllers: {
       sessions: 'users/sessions',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      delete: 'sessions/destroy'
     }
   resources :stores
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
