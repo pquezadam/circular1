@@ -13,9 +13,9 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  DELETE/sign_out
-   def destroy 
-   end
+  #DELETE/sign_out
+   #def destroy 
+   #end
 
   # protected
 
