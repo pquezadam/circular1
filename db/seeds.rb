@@ -21,7 +21,7 @@ La Balanza Antupiren 9301, Local21, Peñalolén
 Alma Zero Av. Apoquindo 7942, Torre 1, Loc. 8, Las Condes"
 
 Store.destroy_all
-addresses = addresses.split("\n")
+address = addresses.split("\n")
 addresses.each do |address|
     Store.create! = {name: Faker::Name.name, address: address}
     sleep 1
