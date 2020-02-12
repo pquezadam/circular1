@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
 addresses = "Emporio La Granel Av. Salvador 757, Providencia
 Un Cuarto a Granel Moneda 3156, Santiago
 Espacio Granel, Las Condes
@@ -21,8 +23,7 @@ Alma Zero Av. Apoquindo 7942, Torre 1, Loc. 8, Las Condes"
 Store.destroy_all
 addresses = addresses.split("\n")
 addresses.each do |addresses|
-    Store.create!(name: name, address: addresses)
+    Store.create!(name: Faker::Name.name, address: address)
     sleep 1
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
