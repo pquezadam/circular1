@@ -5,26 +5,3 @@
 <%= link_to 'Show', @comment %> |
 <%= link_to 'Back', comments_path %>
 
-<script>
-    $(window).click(function(params) {
-        console.log("hey");
-        $.ajax({
-            type: "method",
-            url: "url",
-            data: "data",
-            dataType: "dataType",
-            success: function (response) {
-                
-            }
-        });
-        .done(function() {
-            console.log("success");
-        })
-        .fail(function() {
-            console.log("error");
-        })
-        .always(function() {
-            console.log("complete");
-        });
-    })
-</script>

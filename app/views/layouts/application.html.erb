@@ -21,6 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="<%= asset_path 'gmaps_google.js'%>"></script>
 
+    <%= favicon_link_tag asset_path('eco.png') %>
     
   </head>
 
@@ -32,15 +33,12 @@
     <div class="alerts">
       <%= render 'layouts/alerts' %>
     </div>
-    
     <%= yield %>
     
   <div id="footer">
-    <div class="container">
-      
-        <small> Pablo Quezada M. </small>
+    <div class="container"> 
+        <strong> Pablo Quezada M. </strong>
         <a href="/contacto">+56930236332</a>
-      
     </div>
   </div>  
   </body>

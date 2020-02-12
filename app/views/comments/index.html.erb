@@ -27,3 +27,25 @@
 <br>
 
 <%= link_to 'New Comment', new_comment_path %>
+
+<script>
+    $(window).click(function(params) {
+        console.log("hey");
+        $.ajax({
+            type: 'POST',
+            url: '<%= comments_path %>',
+            dataType: 'script',
+            data: {comment: {content: 'hey mapa'}}
+
+        });
+        .done(function() {
+            console.log("success");
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    })
+</script>
