@@ -12,6 +12,6 @@
  *
  *= require_tree .
  *= require_self
- 
+ *= require font-awesome
 */
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");

@@ -16,7 +16,7 @@ gem 'activeadmin'
 gem 'chartkick'
 gem 'groupdate'
 
-
+gem "font-awesome-rails"
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
