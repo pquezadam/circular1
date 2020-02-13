@@ -17,6 +17,7 @@ gem 'chartkick'
 gem 'groupdate'
 
 gem "font-awesome-rails"
+gem "omniauth-facebook"
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
