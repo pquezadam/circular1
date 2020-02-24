@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+   
   resources :comments
   resources :posts
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -7,7 +8,8 @@ Rails.application.routes.draw do
 root 'stores#index'
   get 'home/index'
   
-    devise_for :users, controllers: {
+    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+    {
       sessions: 'users/sessions',
       registrations: 'users/registrations',
       delete: 'sessions/destroy'
