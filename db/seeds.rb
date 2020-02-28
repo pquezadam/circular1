@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-
+Store.destroy_all
 addresses = "Emporio La Granel Av. Salvador 757, Providencia
 Un Cuarto a Granel Moneda 3156, Santiago
 Espacio Granel, Las Condes
@@ -20,7 +20,7 @@ Mundo Natural Paseo Los Trapenses, Lo Barnechea
 La Balanza Antupiren 9301, Local21, Peñalolén
 Alma Zero Av. Apoquindo 7942, Torre 1, Loc. 8, Las Condes"
 
-Store.destroy_all
+
 addresses = addresses.split("\n")
 addresses.each do |address|
     Store.create!(name: Faker::Name.name, address: address)
