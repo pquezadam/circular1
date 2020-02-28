@@ -15,4 +15,7 @@ class User < ApplicationRecord
       #user.name = auth.info.name
     end
   end
+
+  validates_presence_of :email, :address, :password, :password_confirmation
+  validates_uniqueness_of :address
 end
